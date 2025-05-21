@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header id="titulo">
@@ -14,11 +15,19 @@
    
     <section class="container">
         <article class="post">
-            <h2>Titulo de mi post</h2>
-            <p>descripcion de mi post</p>
+            <h2>Toro REX 250</h2>
+            <p>Dole Proposito</p>
             <img src="img/OIP.jpg" width="400">
-            <p>este de aca es el exto de la imagen de prueba</p>
+            <p>1890$</p>
         </article>
+        <script>
+  document.querySelectorAll('.post').forEach(post => {
+    post.addEventListener('click', function() {
+      const postId = this.getAttribute('data-post-id');
+      window.location.href = `detalles.html?id=${postId}`;
+    });
+  });
+</script>
         <article class="post">
             <h2>Titulo de mi post 2</h2>
             <p>descripcion de mi post 2</p>
