@@ -13,35 +13,100 @@
         <h1>Motos de  Ysmael</h1>
     </header>
    
-    <section class="container">
-        <article class="post">
+    <section class="container"> 
+        <article class="post" data-post-id="1">
             <h2>Toro REX 250</h2>
-            <p>Dole Proposito</p>
+            <p>Doble Propósito</p>
             <img src="img/OIP.jpg" width="400">
             <p>1890$</p>
         </article>
-        <script>
-  document.querySelectorAll('.post').forEach(post => {
-    post.addEventListener('click', function() {
-      const postId = this.getAttribute('data-post-id');
-      window.location.href = `detalles.html?id=${postId}`;
-    });
-  });
-</script>
-        <article class="post">
-            <h2>Titulo de mi post 2</h2>
-            <p>descripcion de mi post 2</p>
-            <img src="img/www.webp" width="400">
-            <p>este de aca es el exto de la imagen de prueba</p>
+        <article class="post" data-post-id="2">
+            <h2>TX 250 GS</h2>
+            <p>Doble Proposito</p>
+            <img src="img/TX250GS.png" width="400">
+            <p>2200$</p>
         </article>
-
-        <article class="post">
-            <h2>Titulo de mi post 3</h2>
-            <p>descripcion de mi post 3</p>
-            <img src="img/gs.webp" width="400">
-            <p>este de aca es el exto de la imagen de prueba</p>
+        <article class="post" data-post-id="3">
+            <h2>Kawasaki KLR 650</h2>
+            <p>Doble Proposito</p>
+            <img src="img/KLR.jpg" width="400">
+            <p>4000$</p>
+        </article>
+         <article class="post" data-post-id="4">
+            <h2>Kawasaki KLR 650</h2>
+            <p>Doble Proposito</p>
+            <img src="img/www.webp" width="400">
+            <p>4000$</p>
         </article>
     </section>
+    <!-- Contenedor para los detalles, inicialmente oculto -->
+    <section id="detalle" style="display:none;">
+        <button id="volver">Volver</button>
+        <div id="detalle-contenido"></div>
+    </section>
+
+    <!-- <script>
+    // Datos de los posts (puedes expandir esto)
+    const posts = [
+      {
+        id: "1",
+        titulo: "Toro REX 250",
+        descripcion: "Doble Propósito",
+        imagen: "img/OIP.jpg",
+        precio: "1890$"
+      },
+      {
+        id: "2",
+        titulo: "TX 250  GS",
+        descripcion: "Doble Proposito",
+        imagen: "img/tx250gs.png",
+        precio: "2200$"
+      },
+      {
+        id: "3",
+        titulo: "Kawasaki KLR 650",
+        descripcion: "Doble Proposito",
+        imagen: "img/KLR.jpg",
+        precio: "4000$"
+      }
+      ,
+      {
+        id: "4",
+        titulo: "Kawasaki KLR 650",
+        descripcion: "Doble Proposito",
+        imagen: "img/www.webp",
+        precio: "4000$"
+      }
+    ];
+
+    document.querySelectorAll('.post').forEach(post => {
+      post.addEventListener('click', function() {
+        const postId = this.getAttribute('data-post-id');
+        const postData = posts.find(p => p.id === postId);
+        if (postData) {
+          document.querySelector('.container').style.display = 'none';
+          document.getElementById('detalle').style.display = 'block';
+          document.getElementById('detalle-contenido').innerHTML = `
+          <article>
+            <h2 class="post-title">${postData.titulo}</h2>
+            <p>${postData.descripcion}</p>
+            <img src="${postData.imagen}" width="400">
+            <p>${postData.precio}</p>
+          </article>
+          
+          
+          `;
+
+        }
+      });
+    });
+
+    document.getElementById('volver').addEventListener('click', function() {
+      document.getElementById('detalle').style.display = 'none';
+      document.querySelector('.container').style.display = 'block';
+    });
+    </script> -->
+    <script src="vistas.js"></script>
     <footer>
         <section>
             <a href="#titulo">ir arriba</a>
