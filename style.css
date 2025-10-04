@@ -1,93 +1,128 @@
+/* Reset básico y fuente */
 html {
   font-family: "Montserrat", sans-serif;
-  
-  }
-
-
-body{
-    margin: 0;
-    background-color: #efefef;
-}
-header{
-    background-color: rgb(67, 77, 77);
-    color: #efefef;
-    padding: 3rem 2rem;
-}
-header h1{
-    font-size: 4rem;
-    text-align: center;
-}
-.container{
-    display: grid;
-    width: 400px;
-    margin: 0 auto;
-}
-section article{
-    transition: all 0.3s ease;
-    background-color: #ffff;
-    margin: 1rem 0;
-    border-radius: 0.5rem;
-    padding-block: 1rem 1rem;
-    cursor: pointer;
-    text-align: center;
-    display: grid;
-    width: 400px;
-    margin: 1rem auto;
 }
 
-section article:hover{
-    box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+body {
+  margin: 0;
+  background-color: #130000;
 }
 
-section article h2, section article p {
-    margin: 1rem;
+#global{
+  padding: 50px;
+  border: #333;
+  background-color: #333;
+ 
+ 
 }
 
-footer{
-    background-color: #222;
-    padding: 3rem;
-    color: #fff ;
+header {
+  background-color: rgb(67, 77, 77);
+  color: #efefef;
+  padding: 0.5rem 0.25rem;
+}
+header h1 {
+  font-size: 4rem;
+  text-align: center;
 }
 
-footer section{
-    float: right;
+
+
+/* Contenedor principal de posts */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 1rem auto;
+  padding: 2rem 0;
+  flex-wrap: wrap 1px;
 }
 
-footer p{
-    margin: 0;
+/* Tarjetas de post */
+.post, section article {
+  transition: box-shadow 0.3s, transform 0.3s;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 1.5rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 0.05rem 0.2rem rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post:hover, section article:hover {
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.post h2, .post p, section article h2, section article p {
+  margin: 1rem 0 0.5rem 0;
+}
+
+/* Detalle con transición (ver index.html para la clase visible) */
+#detalle {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.12);
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+/* Footer moderno y responsivo */
+footer {
+  background-color: #222;
+  padding: 2rem 1rem;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+footer section {
+  display: flex;
+  gap: 1.5rem;
+}
+footer p {
+  margin: 0;
 }
 footer a {
-    transition: color 0.3s;
-    color: #fff;
-    text-decoration: none;
+  transition: color 0.3s;
+  color: #fff;
+  text-decoration: none;
 }
-
-footer a:hover{
-    color: cornflowerblue;
+footer a:hover {
+  color: cornflowerblue;
 }
 
 .back-button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 8px 15px;
-      background: #333;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-        transition: background-color 0.3s ease;
-}
-.post {
-    display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: px;
+  display: inline-block;
+  margin-top: 30px;
+  padding: 8px 15px;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-/* article{
-    text-align: center;
-    transition: all 0.3s ease;
-    background-color: #ffff;
-    margin: 1rem 0;
-    border-radius: 0.5rem;
-    padding-block: 1rem 1rem;
-    cursor: pointer;
-} */
+/* Responsividad */
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+    max-width: 98vw;
+    padding: 1rem 0;
+  }
+  #detalle {
+    max-width: 98vw;
+    padding: 1rem 0.5rem;
+  }
+  header h1 {
+    font-size: 2.2rem;
+  }
+}
