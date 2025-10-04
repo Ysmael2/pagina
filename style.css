@@ -25,32 +25,22 @@ header h1 {
   font-size: 4rem;
   text-align: center;
 }
-
-
-
-/* Contenedor principal de posts */
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1.5rem;
-  max-width: 900px;
-  margin: 1rem auto;
-  padding: 2rem 0;
-  flex-wrap: wrap 1px;
+.container{
+    display: grid;
+    width: 400px;
+    margin: 0 auto;
 }
-
-/* Tarjetas de post */
-.post, section article {
-  transition: box-shadow 0.3s, transform 0.3s;
-  background-color: #fff;
-  border-radius: 0.5rem;
-  padding: 1.5rem 1rem;
-  cursor: pointer;
-  text-align: center;
-  box-shadow: 0 0.05rem 0.2rem rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+section article{
+    transition: all 0.3s ease;
+    background-color: #ffff;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    padding-block: 1rem 1rem;
+    cursor: pointer;
+    text-align: center;
+    display: grid;
+    width: 400px;
+    margin: 1rem auto;
 }
 
 .post:hover, section article:hover {
@@ -101,28 +91,27 @@ footer a:hover {
 }
 
 .back-button {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 8px 15px;
-  background: #333;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+      display: inline-block;
+      margin-top: 30px;
+      padding: 8px 15px;
+      background: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+        transition: background-color 0.3s ease;
+}
+.post {
+    display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: px;
 }
 
-/* Responsividad */
-@media (max-width: 600px) {
-  .container {
-    grid-template-columns: 1fr;
-    max-width: 98vw;
-    padding: 1rem 0;
-  }
-  #detalle {
-    max-width: 98vw;
-    padding: 1rem 0.5rem;
-  }
-  header h1 {
-    font-size: 2.2rem;
-  }
-}
+/* article{
+    text-align: center;
+    transition: all 0.3s ease;
+    background-color: #ffff;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    padding-block: 1rem 1rem;
+    cursor: pointer;
+} */
